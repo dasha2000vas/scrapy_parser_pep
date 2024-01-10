@@ -1,12 +1,13 @@
 import scrapy
 
 from pep_parse.items import PepParseItem
+from pep_parse.settings import ALLOWED_DOMAIN, SPIDER_NAME, START_URL
 
 
 class PepSpider(scrapy.Spider):
-    name = 'pep'
-    allowed_domains = ['peps.python.org']
-    start_urls = ['https://peps.python.org/']
+    name = SPIDER_NAME
+    allowed_domains = ALLOWED_DOMAIN
+    start_urls = START_URL
 
     def parse(self, response):
         tables = response.css('table.pep-zero-table.docutils.align-default')

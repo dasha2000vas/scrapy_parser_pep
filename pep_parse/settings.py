@@ -1,5 +1,9 @@
 from pathlib import Path
 
+SPIDER_NAME = 'pep'
+ALLOWED_DOMAIN = ['peps.python.org']
+START_URL = ['https://peps.python.org/']
+
 BOT_NAME = 'pep_parse'
 
 SPIDER_MODULES = ['pep_parse.spiders']
